@@ -1,0 +1,24 @@
+{
+  "Markdown template": {
+    "prefix": "Markdown template",
+    "body": [
+      "---",
+      "title: '$TM_FILENAME_BASE'",
+      "description: 'Description'",
+      "pubDate: '$CURRENT_MONTH_NAME_SHORT $CURRENT_DATE $CURRENT_YEAR'",
+      "heroImage: '/blog-placeholder-1.jpg'",
+      "---",
+      "",
+      "Introduction",
+      "",
+      "## Title",
+      "",
+      "First paragraph",
+      "",
+      "## Reference",
+      "",
+      "[Link](https://irigyano.github.io)",
+      "![Image](/assets/filename.ext)"
+    ],
+  }
+}
