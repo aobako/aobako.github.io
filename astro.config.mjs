@@ -10,7 +10,6 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://irigyano.github.io",
-  base: "astroworld",
   integrations: [mdx(), sitemap(), react()],
 
   vite: {
