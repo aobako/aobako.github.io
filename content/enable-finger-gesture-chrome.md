@@ -12,11 +12,11 @@ cp /usr/share/applications/google-chrome.desktop ~/.local/share/applications
 
 2. Modify the launch setting at `~/.local/share/applications/google-chrome.desktop`.
 
-append --enable-features=.. after each <mark>Exec=</mark>
+3. append `--enable-features=TouchpadOverscrollHistoryNavigation` after each `Exec=`
 
-Exec=/usr/bin/google-chrome-stable %U <mark>--enable-features=TouchpadOverscrollHistoryNavigation</mark>
-
-Exec=/usr/bin/google-chrome-stable <mark>--enable-features=TouchpadOverscrollHistoryNavigation</mark>
+```txt
+Exec=/usr/bin/google-chrome-stable %U --enable-features=TouchpadOverscrollHistoryNavigation
+```
 
 ## Reference
 
