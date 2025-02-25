@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import "../global.css";
 import { SITE_TITLE } from "../consts";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -71,7 +71,9 @@ const pageTitle = title ? `${title} - ${SITE_TITLE}` : `${SITE_TITLE}`;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
-  <body class="py-4 px-8 min-h-[100dvh] xl:px-[30dvw]">
+  <body
+    class="bg-zinc-700 text-zinc-300 py-4 px-8 min-h-[100dvh] xl:px-[30dvw]"
+  >
     <Header />
     <slot />
     <Footer />
