@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
 import tailwindcss from "@tailwindcss/vite";
+import { remarkModifiedTime } from "./plugins/remark-modified-time";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +15,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  markdown: {
+    remarkPlugins: [remarkModifiedTime],
   },
 });

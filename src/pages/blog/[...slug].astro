@@ -14,11 +14,9 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { title, description, pubDate, updatedDate, heroImage } = post.data;
-console.log(updatedDate, "213");
-
+const { title, description, pubDate, heroImage } = post.data;
 const { Content, remarkPluginFrontmatter } = await render(post);
-console.log(remarkPluginFrontmatter);
+const { updateDate } = remarkPluginFrontmatter;
 ---
 
 <Layout title={title} description={description}>
@@ -31,9 +29,9 @@ console.log(remarkPluginFrontmatter);
         <div>
           <FormattedDate date={pubDate} />
           {
-            updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
+            updateDate && (
+              <div>
+                Last updated on <FormattedDate date={new Date(updateDate)} />
               </div>
             )
           }
