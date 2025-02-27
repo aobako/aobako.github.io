@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
 import Layout from "../../components/Layout.astro";
+import Prose from "../../components/Prose.astro";
 import { FormattedDate } from "../../components/FormattedDate";
 
 export async function getStaticPaths() {
@@ -21,24 +22,30 @@ const { updateDate } = remarkPluginFrontmatter;
 
 <Layout title={title} description={description}>
   <main>
-    <article class="prose prose-invert max-w-none">
-      <div>
-        {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
-      </div>
-      <div>
+    <Prose>
+      <article>
         <div>
-          <FormattedDate date={pubDate} />
           {
-            updateDate && (
-              <div>
-                Last updated on <FormattedDate date={new Date(updateDate)} />
-              </div>
+            heroImage && (
+              <img width={1020} height={510} src={heroImage} alt="" />
             )
           }
         </div>
+        <div class="pb-2">
+          <div class="flex gap-4 items-end">
+            <FormattedDate date={pubDate} />
+            {
+              updateDate && (
+                <div class="text-sm text-zinc-400">
+                  Last updated on <FormattedDate date={new Date(updateDate)} />
+                </div>
+              )
+            }
+          </div>
+        </div>
         <h1>{title}</h1>
-      </div>
-      <Content />
-    </article>
+        <Content />
+      </article>
+    </Prose>
   </main>
 </Layout>
