@@ -12,7 +12,7 @@ const posts = (await getCollection("blog")).sort(
 <Layout description={SITE_DESCRIPTION}>
   <main class="py-4">
     <section>
-      <ul>
+      <ul class="flex flex-col gap-3">
         {
           posts.map((post) => (
             <li>
