@@ -10,7 +10,7 @@ import { remarkModifiedTime } from "./plugins/remark-modified-time";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://irigyano.github.io",
+  site: "https://aobako.github.io",
   integrations: [mdx(), sitemap(), react()],
 
   vite: {
